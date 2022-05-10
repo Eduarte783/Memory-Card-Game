@@ -8,7 +8,7 @@ In this game you'll have the chance to successfully match 12 different pairs wit
 
 Note: Will use Javascript, HTML and CSS to style and create game. Will utilize features to create a timer that runs out if unsuccessful. Buttons to start and clear game in order re-start.
 
-## MVP
+### MVP
 
 - Render a start screen with game-play instructions and a start button.
 - Render fully operational game 
@@ -17,12 +17,12 @@ Note: Will use Javascript, HTML and CSS to style and create game. Will utilize f
 - Render operational "Clear" button to restart game. 
 
 
-## STRETCH GOALS
+### STRETCH GOALS
 
 - Show a timer counting down to signify end of game if not succesfully completed.
 - On screen messages for winner and loser. 
 - 
 
-## WIREFRAME
+### WIREFRAME
 
 ![image](https://user-images.githubusercontent.com/102763920/167072986-5300b6b2-031b-444d-956a-dfafa6715568.png)
