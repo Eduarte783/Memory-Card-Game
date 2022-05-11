@@ -1,99 +1,115 @@
-html {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(325deg,  #6f00fc 0%,#fc7900 50%,#fcc700 100%);
+
+  body {
+    margin: 0 auto;
+    display: inline;
+    background: linear-gradient(135deg,  #6f00fc 0%,#fc7900 50%,#fcc700 100%);
+    display: flex;
+    height: 100vh;
+  }
+
+  p {
+    width: 420px;
+    height: 120px;
+    text-align: center;
+    position: relative;
+    top: 50px;
+    left: 1px;
+    right: auto;
+    margin: 0 auto;
     font-family: 'Bangers', cursive;
-    font-size: 38px;
+    font-size: 60px;
     color: rgb(48, 4, 247);
     text-shadow: 3px 5px 3px white;
-    text-indent: 20px;
-
-}
-
-h1 {
-    text-indent: 280px;
-    position: relative;
-    margin-bottom: 50px;
-} 
-
-.game {
+  
+  }
+  
+  .match-game {
+    width: 600px;
+    height: 500px;
+    margin: 0 auto;
     position: absolute;
-    top: 50%;
-    left: 40%;
+    top: 53%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    margin-top: 100px;
-    margin-left: 150px;
-}
-
-.disabled {
-    color: #525050; 
-}
-
-.board-container {
-    position: relative;
-    width: 800px;
-    align-items: center;
-    margin-top: 25px;
-
-}
-
-.board, .win {
-    border-radius: 5px;
-    box-shadow: 0 10px 25px rgb(33 33 33 / 25%);
-    background: linear-gradient(135deg,  #6f00fc 0%,#fc7900 50%,#fcc700 100%);
-    transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
-    backface-visibility: hidden;
-}
-
-button {
-    background: #282A3A;
-    color: #FFF;
-    border-radius: 5px;
-    padding: 10px 20px;
-    border: 0;
-    cursor: pointer;
-    font-family: 'Bangers', cursive;
-    font-size: 18pt;
-    margin-left: 200px;
-}
-
-.board {
-    padding: 40px;
     display: grid;
     grid-template-columns: repeat(5, auto);
-    grid-gap: 10px;
-}
-.card {
+    perspective: 1000px;
+  }
+  
+  .match-card {
+    width: 90px;
+    height: 90px;
     position: relative;
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-}
-
-.card-front, .card-back {
-    position: absolute;
-    border-radius: 5px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .2s;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  }
+  
+  .match-card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+  }
+  
+  .match-card.flip {
+    transform: rotateY(180deg);
+  }
+  
+  .front-side,
+  .back-side {
     width: 100%;
     height: 100%;
-    background: white;
-    transition: .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    padding: 5px;
+    position: absolute;
+    border-radius: 10px;
+    background: #f3f5f2;
     backface-visibility: hidden;
-}
+  }
+  
+  .front-side {
+    transform: rotateY(180deg);
+  }
 
-.card-back {
-    font-size: 28pt;
+  button {
+    background: #282A3A;
+    color: #FFF;
+    width: 100px;
+    height: 60px;
     text-align: center;
-    line-height: 100px;
-    background: rgb(47, 46, 46);
-    transform: rotateY(180deg) rotateZ(50deg);
-    user-select: none;
-}
+    position: absolute;
+    top: 520px;
+    right: 260px;
+    bottom: auto;
+    left: auto;
+    border-radius: 5px;
+    border: 2px;
+    cursor: pointer;
+    font-family: 'Bangers', cursive;
+    font-size: 20pt;
+ }
 
-.card.flipped .card-front {
-    transform: rotateY(180deg) rotateZ(50deg);
-}
+ .timer {
+  font-family: 'Bangers', cursive;
+  font-size: 25pt;
+  color: white;
+  position: absolute;
+  text-align: center;
+  top: 200px;
+  right: 750px;
+  bottom: auto;
+  left: auto;
+  margin: auto;
+ }
 
-.card.flipped .card-back {
-    transform: rotateY(0) rotateZ(0);
-}
-
+ .score {
+  font-family: 'Bangers', cursive;
+  font-size: 25pt;
+  color: white;
+  text-align: center;
+  position: absolute;
+  top: 200px;
+  right: 450px;
+  bottom: auto;
+  margin: auto;
+   
+ }
