@@ -13,7 +13,6 @@ Note: Will use Javascript, HTML and CSS to style and create game. Will utilize f
 - Render a start screen with game-play instructions and a start button.
 - Render fully operational game 
 - Render game results for either win or loss.
-- Show screen counter noting the number attempts made.
 - Render operational "Clear" button to restart game. 
 
 
@@ -26,3 +25,9 @@ Note: Will use Javascript, HTML and CSS to style and create game. Will utilize f
 ### WIREFRAME
 
 ![image](https://user-images.githubusercontent.com/102763920/167072986-5300b6b2-031b-444d-956a-dfafa6715568.png)
+
+Link to deployed live site:
+
+For this project I utilized basic HTML, CSS and JS to render a functioning game. The construction of the game used basic CSS positioning, attributes, transitions and styling features. For JS I went with basic callback functions, iterators and DOM events. 
+
+Sources: Google, MDN, W3 Schools and Stack Overflow.

@@ -2,7 +2,7 @@
 // Created Query Selector for elements. Looped thru with "forEach" with an eventListener. This way every time a card is clicked the "FlipCard" function is invoked 
 const cards = document.querySelectorAll('.match-card');
 const reset = document.getElementById('resetGame');
-console.log("reset")
+
 
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -60,9 +60,13 @@ function unflipCards() {
 function resetBoard() {
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
+
 }
 
-// SHUFFLE function to randomly pick different images when restarting game.  
+/*function resetGame() {
+  let resetButton = document.getElementById('resetGame').addEventListener('click', reset); */
+
+// SHUFFLE function using "forEach" ITERATOR to randomly pick different images when restarting game.  
 
 function shuffle() {
      cards.forEach(card => {
@@ -79,7 +83,7 @@ function shuffle() {
   startButton.addEventListener("click", startGame);
 
 
-  // RESTART Button 
+  // RESTART Button using an ITERATOR with DOM to start timer 
   function startGame() {
     cards.forEach(card => card.addEventListener('click', flipCard));
     resetBoard();
@@ -91,7 +95,9 @@ function shuffle() {
 
   let count = 45
   let timer;
- 
+
+  // THIS function locks the board when time runs out and displays message.
+  
 function startTimer() { 
   count--
   document.getElementById("timer").innerText = count;
@@ -99,52 +105,9 @@ function startTimer() {
   if (count === 0) {
     clearInterval(timer);
     lockBoard = true
-    document.getElementById("timer").innerText = "You Lost, Try Again!";
-     
-}
+    document.getElementById("timer").innerText = "You Lost, Try Again!"   
+  }
    
-  /*  timer = setInterval(function () {
-      
-        count = count++;
-        document.getElementById("timer").firstChild.innerText = count++;
- 
-   
-        if (count === 60) {
-            clearInterval(timer);
-            document.getElementById("timer").firstChild.innerText = "Game Over";
-        }
-    }, 1000);*/
-}
+} 
 
-//window.location.reload()
-
-  // Timer/Coundown
-
- /* function countdown () {
-        
-    countdownStarted = true;
-
-    var timeStart = +new Date;
-    var timer = setInterval( function() {
-        
-        var timeNow = +new Date;
-        var difference = ( timeNow - timeStart ) / 1000; 
-        
-        if (time > 0 && !win) {
-            
-            time = 30;
-            time = Math.floor( time - difference );
-            $('.timer').text( time );
-            
-        } else {
-            
-            outOfTime = true;
-            alert("you have run out of time :(");
-            
-            clearInterval(timer);
-        } 
-        
-    }, 250 );
-    
-};*/
 
