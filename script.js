@@ -1,8 +1,14 @@
+
+// Created Query Selector for elements. Looped thru with "forEach" with an eventListener. This way every time a card is clicked the "FlipCard" function is invoked 
 const cards = document.querySelectorAll('.match-card');
+const reset = document.getElementById('resetGame');
+console.log("reset")
 
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+
+// FLIPCARD invoked
 
 function flipCard() {
   if (lockBoard) return;
@@ -17,12 +23,15 @@ function flipCard() {
     return;
   }
 
-  // second click
+  // This one fires after second card is clicked
+
   secondCard = this;
   lockBoard = true;
 
   checkForMatch();
 }
+
+// Function to check when cards match, to keep cards facing forwards and if they do not match to be flipped back face-down. 
 
 function checkForMatch() {
   let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
@@ -53,12 +62,61 @@ function resetBoard() {
   [firstCard, secondCard] = [null, null];
 }
 
-(function shuffle() {
-  cards.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 20);
-    card.style.order = randomPos;
-  });
+// SHUFFLE function to randomly pick different images when restarting game.  
 
+function shuffle() {
+     cards.forEach(card => {
+       let ramdomPos = Math.floor(Math.random() * 12);
+       card.style.order = ramdomPos;
+     });
+   };
+  shuffle()
+  cards.forEach(card => card.addEventListener('click', flipCard));
+  // Timer function //
+
+  let i = 0;
+  let startButton = document.getElementById("startGame")
+  startButton.addEventListener("click", startGame);
+
+
+  // RESTART Button 
+  function startGame() {
+    cards.forEach(card => card.addEventListener('click', flipCard));
+    resetBoard();
+    //startButton.disabled = true;
+
+    timer = setInterval(startTimer, 1000);
+    //startTimer();
+  }
+
+  let count = 45
+  let timer;
+ 
+function startTimer() { 
+  count--
+  document.getElementById("timer").innerText = count;
+ 
+  if (count === 0) {
+    clearInterval(timer);
+    lockBoard = true
+    document.getElementById("timer").innerText = "You Lost, Try Again!";
+     
+}
+   
+  /*  timer = setInterval(function () {
+      
+        count = count++;
+        document.getElementById("timer").firstChild.innerText = count++;
+ 
+   
+        if (count === 60) {
+            clearInterval(timer);
+            document.getElementById("timer").firstChild.innerText = "Game Over";
+        }
+    }, 1000);*/
+}
+
+//window.location.reload()
 
   // Timer/Coundown
 
@@ -70,15 +128,15 @@ function resetBoard() {
     var timer = setInterval( function() {
         
         var timeNow = +new Date;
-        var difference = ( timeNow - timeStart ) / 1000; //calculates time difference if game isn't in focus
+        var difference = ( timeNow - timeStart ) / 1000; 
         
-        if (time > 0 && !win) {// if there is still time left and game isn't won, deduct time
+        if (time > 0 && !win) {
             
             time = 30;
             time = Math.floor( time - difference );
             $('.timer').text( time );
             
-        } else {//stop timer when time is run out
+        } else {
             
             outOfTime = true;
             alert("you have run out of time :(");
@@ -90,6 +148,3 @@ function resetBoard() {
     
 };*/
 
-});
-
-cards.forEach(card => card.addEventListener('click', flipCard));

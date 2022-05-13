@@ -1,49 +1,111 @@
 
   body {
     margin: 0 auto;
-    display: inline;
+    display: grid;
     background: linear-gradient(135deg,  #6f00fc 0%,#fc7900 50%,#fcc700 100%);
-    display: flex;
     height: 100vh;
   }
 
   p {
     width: 420px;
     height: 120px;
+    display: grid;
     text-align: center;
-    position: relative;
-    top: 50px;
-    left: 1px;
-    right: auto;
-    margin: 0 auto;
+    position: absolute;
+    top: -52%;
+    left: 15%;
+    margin-bottom: 5px;
     font-family: 'Bangers', cursive;
-    font-size: 60px;
+    font-size: 55pt;
     color: rgb(48, 4, 247);
     text-shadow: 3px 5px 3px white;
   
   }
+  h2 {
+    font-family: 'Bangers', cursive;
+    font-size: 37pt;
+    display: inline-block;
+    color: white;
+    text-shadow: 3px 5px 3px rgb(43, 2, 249);
+    position: absolute;
+    text-align: center;
+    top: -21%;
+    right: 8%;
+    width: 500px;
+    height: 50px;
+    
+   }
+
+   h1 {
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 11pt;
+      color: rgb(48, 4, 247);
+      display: grid;
+      position: absolute;
+      top: 102%;
+      margin: auto;
+      align-items: center;
+   }
   
   .match-game {
-    width: 600px;
-    height: 500px;
-    margin: 0 auto;
+    width: 570px;
+    height: 450px;
+    background: linear-gradient(135deg,  #6f00fc 25%,#fc7900 50%,#fcc700 100%);
+    margin: auto;
     position: absolute;
     top: 53%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: grid;
+    display: inline-grid;
     grid-template-columns: repeat(5, auto);
     perspective: 1000px;
   }
+
+  #startGame {
+    background: #282A3A;
+    color: #FFF;
+    width: 90px;
+    height: 65px;
+    display: grid;
+    text-align: center;
+    position: absolute;
+    padding: 7px;
+    top: 100%;
+    right: 63%;
+    margin-top: 60px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Bangers', cursive;
+    font-size: 18pt;
+ }
+
+ #resetGame {
+  background: #282A3A;
+  color: #FFF;
+  width: 90px;
+  height: 65px;
+  display: grid;
+  text-align: center;
+  position: absolute;
+  padding-top: 13px;
+  top: 100%;
+  right: 22%;
+  margin-top: 60px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Bangers', cursive;
+  font-size: 22pt;
+ }
   
   .match-card {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .2s;
     box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    margin: 10px;
   }
   
   .match-card:active {
@@ -70,46 +132,3 @@
     transform: rotateY(180deg);
   }
 
-  button {
-    background: #282A3A;
-    color: #FFF;
-    width: 100px;
-    height: 60px;
-    text-align: center;
-    position: absolute;
-    top: 520px;
-    right: 260px;
-    bottom: auto;
-    left: auto;
-    border-radius: 5px;
-    border: 2px;
-    cursor: pointer;
-    font-family: 'Bangers', cursive;
-    font-size: 20pt;
- }
-
- .timer {
-  font-family: 'Bangers', cursive;
-  font-size: 25pt;
-  color: white;
-  position: absolute;
-  text-align: center;
-  top: 200px;
-  right: 750px;
-  bottom: auto;
-  left: auto;
-  margin: auto;
- }
-
- .score {
-  font-family: 'Bangers', cursive;
-  font-size: 25pt;
-  color: white;
-  text-align: center;
-  position: absolute;
-  top: 200px;
-  right: 450px;
-  bottom: auto;
-  margin: auto;
-   
- }
