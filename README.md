@@ -26,7 +26,7 @@ Note: Will use Javascript, HTML and CSS to style and create game. Will utilize f
 
 ![image](https://user-images.githubusercontent.com/102763920/167072986-5300b6b2-031b-444d-956a-dfafa6715568.png)
 
-Link to deployed live site: https://github.com/Eduarte783/Memory-Card-Game
+Link to deployed live site: https://eduarte783.github.io/Memory-Card-Game/
 
 For this project I utilized basic HTML, CSS and JS to render a functioning game. The construction of the game used basic CSS positioning, attributes, transitions and styling features. For JS I went with basic callback functions, iterators and DOM events. 
 
